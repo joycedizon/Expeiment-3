@@ -1,41 +1,33 @@
 #include<iostream>
 #include<conio.h>
 #include<string.h>
+
 using namespace std;
 
 int main ()
 {
 
-	int size, x, y, z;
-	char in[100];
+	int size, x, y;
+	char in[100], out[100];
 	
 	cout << "Enter any combination of characters: ";
 	cin >> in;
 	
 	size = strlen(in);
 	
-	for (x=0; x<size; x++)
+	for (x=0, y=size; x<=size; x++, y--)
 	{
-		for (y=x+1; y<size; y++)
-		{
-			if (in[x] > in[y])
-			{
-				z = in[x];
-				in[x]=in[y];
-				in[y]=z;
-				
-			}
-		}
+		out[y]=in[x];
 	}
     	
-    cout << "\n" << endl;
+ 	cout << "\n";
     	
-    for (x=0 ; x<= size ; x++)
-    {
-        cout << in[x] << ' ';
-    }
+	for (x=0 ; x<= size ; x++)
+	{
+		cout << out[x] << ' ';
+	}
     
-    cout << "\n\nThe size of array is: " << size;
+    	cout << "\nThe size of array is: " << size;
     
 	getch();
 	return 0;	
